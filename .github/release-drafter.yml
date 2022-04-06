@@ -10,6 +10,9 @@ categories:
       - 'fix'
       - 'bugfix'
       - 'bug'
+  - title: '🔧 Refactoring'
+    labels:
+      - 'refactor'
   - title: '⛓️ Dependencies'
     collapse-after: 1
     labels:
@@ -46,6 +49,12 @@ autolabeler:
       - '/^(bug)?fix.+/'
     title:
       - '/fix/i'
+  - label: 'refactor'
+    branch:
+      - '/^refactor.+/'
+  - label: 'dependencies'
+    files:
+      - 'yarn.lock'
   - label: 'documentation'
     files:
       - '*.md'
