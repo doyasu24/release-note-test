@@ -10,8 +10,14 @@ categories:
       - 'fix'
       - 'bugfix'
       - 'bug'
-  - title: '🧰 Maintenance'
-    label: 'chore'
+  - title: '⛓️ Dependencies'
+    collapse-after: 1
+    labels:
+      - 'dependencies'
+  - title: '📖 Documentation'
+    collapse-after: 1
+    labels:
+      - 'documentation'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
 version-resolver:
@@ -30,18 +36,16 @@ template: |
 
   $CHANGES
 autolabeler:
-  - label: 'chore'
+  - label: 'enhancement'
+    branch:
+      - '/^feature.+/'
+  - label: 'bug'
+    branch:
+      - '/^(bug)?fix.+/'
+    title:
+      - '/fix/i'
+  - label: 'documentation'
     files:
       - '*.md'
     branch:
-      - '/docs{0,1}\/.+/'
-  - label: 'bug'
-    branch:
-      - '/fix\/.+/'
-    title:
-      - '/fix/i'
-  - label: 'enhancement'
-    branch:
-      - '/feature\/.+/'
-    body:
-      - '/JIRA-[0-9]{1,4}/'
+      - '/^docs{0,1}.+/'
